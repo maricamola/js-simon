@@ -1,5 +1,5 @@
 //ELEMENTS
-const numbers = [];
+  const numbers = [];
 
 //Generiamo i 5 numeri random
 while (numbers.length < 5) {
@@ -10,23 +10,49 @@ while (numbers.length < 5) {
 
 }
 //Inserisco i numbers in HTML
-const divNumbers = document.getElementById('numbers');
+  const divNumbers = document.getElementById('numbers');
 
 //E siccome sono numeri in una array utilizzo join che mi restituisce una stringa
-divNumbers.innerHTML = numbers.join(' ');
+  divNumbers.innerHTML = numbers.join(' ');
 
 //Genero il time con setTimeOut 
+  setTimeout(function() {
+    divNumbers.innerHTML = ' ';
+  },4000);
+
 setTimeout(() => {
-  divNumbers.innerHTML = ' ';
-},5000);
-
-//Genero i prompt per l'utente
-  const numberiUtente = [];
+  const numeriUtente = [];
   for (let i = 1; i <= 5; i++) {
-    const numberoUtente = parseInt(prompt(`Inserisci il numero ${i}`))
-
-    numberiUtente.push(numberoUtente);
+    const numeroUtente = parseInt(prompt(`Inserisci il numero ${i}`))
+    numeriUtente.push(numeroUtente);
   }
 
-  //Verico se corrispondono ai numeri Random
+  //Verifico se corrispondono ai numeri Random
+  const equalNumbers = [];
+  for (const numeroUtente of 'numeriUtente') {
+    if (numbers.includes(numeroUtente)) {
+      equalNumbers.push(numeroUtente);
+    }
+  }
+
+  //Stampo il risultato
+if (!equalNumbers.length === 0) {
+  document.getElementById('message').textContent = (`Hai trovato 
+  ${equalNumbers.length} numeri: ${equalNumbers.join('')}`);
+  
+} else {
+  document.getElementById('message').textContent = ('Mi dispiace, i numeri inseriti non corrispondono. Riprova!');
+}
+},5000);
+
+
+
+
+
+
+
+
+
+
+
 
