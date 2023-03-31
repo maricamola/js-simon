@@ -37,9 +37,9 @@ setTimeout(() => {
 
   //Stampo il risultato
 if (equalNumbers.length === 0) {
-  document.getElementById('message').textContent = ('Mi dispiace, i numeri inseriti non corrispondono. Riprova!');
+  document.getElementById('message2').textContent = ('Mi dispiace, i numeri inseriti non corrispondono. Riprova!');
 } else {
-  document.getElementById('message').textContent = (`Complimenti! Hai trovato 
+  document.getElementById('message1').textContent = (`Complimenti! Hai trovato 
   ${equalNumbers.length} numeri: ${equalNumbers.join(' - ')}`);
 }
 },5000);
