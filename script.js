@@ -29,19 +29,18 @@ setTimeout(() => {
 
   //Verifico se corrispondono ai numeri Random
   const equalNumbers = [];
-  for (const numeroUtente of 'numeriUtente') {
+  for (const numeroUtente of numeriUtente) {
     if (numbers.includes(numeroUtente)) {
       equalNumbers.push(numeroUtente);
     }
   }
 
   //Stampo il risultato
-if (!equalNumbers.length === 0) {
-  document.getElementById('message').textContent = (`Hai trovato 
-  ${equalNumbers.length} numeri: ${equalNumbers.join('')}`);
-  
-} else {
+if (equalNumbers.length === 0) {
   document.getElementById('message').textContent = ('Mi dispiace, i numeri inseriti non corrispondono. Riprova!');
+} else {
+  document.getElementById('message').textContent = (`Complimenti! Hai trovato 
+  ${equalNumbers.length} numeri: ${equalNumbers.join(' - ')}`);
 }
 },5000);
 
